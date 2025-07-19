@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image" href="Logo1.jpg" />
+    <title>Yuva Tourism Event Registration</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: rgb(34,158,195);
+background: linear-gradient(0deg, rgba(34,158,195,1) 0%, rgba(250,250,250,1) 90%);
+            text-align: center;
+            color: white;
+        }
+        .container {
+            padding: 20px;
+        }
+        .register-btn {
+            background-color: #ff4500;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: 0.3s;
+        }
+        .register-btn:hover {
+            background-color: #e63900;
+        }
+        .banner img {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .event-details {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        .container .heading1 h1 u{
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: larger;
+            color: black;
+        }
+
+        .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: navy;
+  color: white;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: rgb(132, 132, 232);
+  color: white;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+.modal-body{
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    color: black;
+}
+
+/* From Uiverse.io by vikiWayne */ 
+.button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #2c9caf;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #2c9caf;
+}
+
+button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid black;
+  box-shadow: 4px 5px 17px -4px smokewhite;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: red;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+button:hover::before {
+  width: 250%;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading1">
+            <h1><u>Event Registration</u></h1>
+        </div>
+        
+        <div class="banner">
+            <img src="recent2.jpg" alt="Event Banner">
+        </div>
+        
+        <div class="event-details">
+            <h2>Event Title: Yuva Tourism Adventure</h2>
+            <p><strong>Start Time:</strong> 10:00 AM, 25th March 2025</p>
+            <p><strong>End Time:</strong> 6:00 PM, 25th March 2025</p>
+        </div>
+        
+        <!-- <button class="register-btn" onclick="window.location.href='https://your-google-form-link'">Register for Event</button> -->
+    </div>
+    <!-- <button id="myBtn" class="register-btn">Open Modal</button> -->
+
+    <!-- From Uiverse.io by vikiWayne --> 
+<button class="button" id="myBtn">Register For Event</button>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" >
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+<script>
+    var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Conform To register</h2>
+    </div>
+    <div class="modal-body">
+      <p>Yuva Tourism Club, KL University
+        Welcome to Yuva Tourism Club, the official tourism club of KL University, established under the Student Activity Council (SAC) as part of a government initiative to promote youth engagement in tourism. 🌍✨
+        
+        We are a vibrant community of travel enthusiasts dedicated to exploring new destinations, promoting sustainable tourism, and enriching student experiences through cultural and adventure-based travel. Our club is committed to organizing educational trips, heritage walks, adventure tourism, and eco-friendly travel initiatives that help students discover the world beyond classrooms.
+        
+        Our Mission:
+        To ignite the spirit of exploration and promote responsible tourism.
+        To introduce students to the rich heritage, diverse cultures, and natural wonders of India and beyond.
+        To organize experiential learning trips, workshops, and interactive tourism events.
+        To encourage eco-tourism and sustainable travel practices.</p>
+      <a href="https://sac.kluniversity.in/clubRegistration" target="_blank"><button class="button" id="myBtn">Conform to Register</button></a>
+    </div>
+    <div class="modal-footer">
+      <h3>This Event is Organised By Yuva Tourism</h3>
+    </div>
+  </div>
+</div>
+</body>
+</html>

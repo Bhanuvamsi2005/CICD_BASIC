@@ -1,0 +1,272 @@
+body {
+    background-color: white;
+    color: royalblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+header {
+    background-color: royalblue;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+header nav {
+    display: flex;
+    gap: 20px;
+}
+header nav li {
+    list-style: none;
+}
+header nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+header .logo {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+header .logo:hover {
+    color: lightblue;
+    transition-duration: 0.7s;
+}
+header nav li a:hover {
+    color: lightblue;
+    transition-duration: 0.7s;
+}
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+.overlay h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.overlay button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: royalblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.overlay button:hover {
+    background-color: black;
+    color: white;
+}
+.scrolling {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    background-color: navy;
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+}
+.scrolling marquee {
+    font-size: 20px;
+}
+
+/* Updated Fancy Button */
+.fancy {
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 20px auto; /* Centering button */
+    outline: none;
+    overflow: visible;
+    padding: 1.25em 2em;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 15px;
+    width: fit-content;
+}
+
+.fancy::before {
+    content: " ";
+    width: 1.5625rem;
+    height: 2px;
+    background: black;
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy .text {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+}
+
+.fancy:hover {
+    color: white;
+    background: black;
+}
+
+.fancy:hover::before {
+    width: 0.9375rem;
+    background: white;
+}
+
+.fancy:hover .text {
+    color: white;
+    padding-left: 1.5em;
+}
+
+/* Cards */
+.card {
+    position: relative;
+    width: 11.875em;
+    height: 16.5em;
+    box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 120ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 0.5em;
+    padding-bottom: 3.4em;
+}
+
+.card::after {
+    content: "Contact";
+    padding-top: 1.25em;
+    padding-left: 1.25em;
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    background: #00AC7C;
+    color: #fff;
+    height: 2.5em;
+    width: 90%;
+    transition: all 80ms;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+.card .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 1.875em;
+    font-weight: 400;
+    color: #000;
+}
+
+.card .price {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 0.625em;
+    color: #000;
+}
+
+.card:hover::after {
+    bottom: 0;
+    opacity: 1;
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+
+.card:active::after {
+    content: "Added !";
+    height: 3.125em;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10vw;
+    background-color: rgb(0, 255, 160);
+    padding: 50px 50px;
+}
+
+.card .image {
+    background: rgb(241, 241, 241);
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.card .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.scrolling2 {
+    background-color: rgb(0, 255, 160);
+    height: 20px;
+}
+
+.scrolling2 marquee {
+    background-color: rgb(25, 116, 150);
+    color: white;
+}
+
+.cards .team {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+#aboutus {
+    background-color: aliceblue;
+    padding: 50px 50px;
+}
+
+#aboutus #title1 {
+    color: black;
+    font-size: large;
+    text-align: center;
+    font-style: italic;
+}
+
+#aboutus #text1 {
+    font-size: 20px;
+}
+
+#cards #carouselExample {
+    padding: 20px;
+}
